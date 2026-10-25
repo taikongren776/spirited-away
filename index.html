@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171f23" />
+    <meta name="description" content="穿过红桥，走进暮色。以实时 Web3D 重访《千与千寻》的汤屋。" />
+    <title>油屋 · 暮色来信 — A Spirited Journey</title>
+  </head>
+  <body>
+    <main id="app">
+      <div id="scene" aria-label="汤屋与红桥三维场景"></div>
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+      <header class="masthead">
+        <a class="identity" href="#" aria-label="从头重播"><span class="seal">油</span><span class="wordmark">千与千寻<small>A SPIRITED JOURNEY</small></span></a>
+        <div class="edition"><span class="live-dot"></span> REALTIME WORLD <span class="edition-divider"></span> VOL. 01</div>
+        <button id="help-toggle" class="icon-button" aria-label="查看操作说明" title="操作说明">?</button>
+      </header>
+      <section class="story-copy" aria-label="场景介绍">
+        <div class="eyebrow"><span></span> SOMEWHERE, BETWEEN TWO WORLDS</div>
+        <h1>暮色来信<span>A letter from<br>the other side.</span></h1>
+        <p>穿过红桥，世界在此刻慢下来。</p>
+        <div class="scene-index"><span>01</span><i></i><span>油屋 · 黄昏时分<small>THE BATHHOUSE AT DUSK</small></span></div>
+      </section>
+      <aside class="vertical-note" aria-hidden="true">風が吹く。灯りがともる。</aside>
+      <div class="scene-marker"><span class="marker-line"></span><span id="chapter">壹 · 水岸初见</span></div>
+      <footer class="experience-controls">
+        <div class="controls-meta"><span id="mode-label"><i></i> 电影漫游</span><span id="shot-caption">沿着风的方向，去往灯火深处。</span><span class="duration-label">A 72-SECOND REVERIE</span></div>
+        <div class="transport">
+          <button id="play" class="play-button" aria-label="暂停" title="播放或暂停（空格）"></button>
+          <button id="restart" class="icon-button" aria-label="重新播放" title="重新播放"></button>
+          <span class="time" id="elapsed">00:00</span>
+          <label class="timeline"><span class="sr-only">影片进度</span><input id="progress" type="range" min="0" max="72" step="0.05" value="0" aria-label="影片进度" /><span class="timeline-marks" aria-hidden="true"><i></i><i></i><i></i></span></label>
+          <span class="time total">01:12</span><span class="control-divider"></span>
+          <button id="explore" class="mode-button"><span class="orbit-icon"></span><span id="explore-label">自由探索</span></button>
+          <button id="fullscreen" class="icon-button" aria-label="进入全屏" title="全屏"></button>
+        </div>
+        <div class="footer-notes"><span>灵感源于 宫崎骏《千与千寻》<b>AN UNOFFICIAL FAN TRIBUTE</b></span><span class="drag-hint"><span>↔</span> 拖动探索 · 滚轮缩放</span><button id="quality" title="切换画质">画质 <span>自动</span></button></div>
+      </footer>
+      <div id="toast" role="status" aria-live="polite"></div>
+      <dialog id="help"><button id="help-close" class="icon-button" aria-label="关闭说明">×</button><span class="eyebrow">TAKE YOUR TIME</span><h2>在这里，慢一点。</h2><p>72 秒的镜头旅行，穿过红桥，走近灯火。</p><dl><dt>空格</dt><dd>播放 / 暂停</dd><dt>拖动画面</dt><dd>进入自由查看</dd><dt>滚轮 / 双指</dt><dd>拉近或远离</dd><dt>返回电影</dt><dd>平滑回到刚才的镜头</dd><dt>← / →</dt><dd>后退 / 前进 5 秒</dd></dl><p class="help-foot">纯前端实时渲染 · 无声体验<br>建筑与环境均为程序化三维重建</p></dialog>
+      <div id="loading"><span class="loading-seal">油</span><p>灯火正在苏醒</p><span class="loading-caption">A WORLD IS TAKING SHAPE</span><div class="loading-track"><i id="loading-bar"></i></div><span id="loading-detail">准备旅程</span></div>
+      <section id="error" hidden role="alert"><span class="seal">油</span><h2>旅程暂时停在这里</h2><p id="error-message"></p><button id="retry">重新尝试</button></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
